@@ -1,0 +1,11 @@
+ul a.active{
+    background-color: gray;
+    color:white;
+}
+ul a{
+    padding: 5px;
+    border-radius: 7px;
+}
+.icons{
+   font-size: 30px;
+}
