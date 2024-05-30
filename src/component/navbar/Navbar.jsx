@@ -1,8 +1,9 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import "./Navbar.css"
 import { IoMdMenu } from "react-icons/io";
 import { useState } from "react";
 import { RxCross2 } from "react-icons/rx";
+import Footer from "../footer/Footer";
 
 const Navbar = () => {
 
@@ -11,7 +12,8 @@ const Navbar = () => {
         setClick(!click)
     }
     return (
-        <nav className="bg-gray-300 py-4">
+       <div>
+          <nav className="bg-gray-300 py-4">
             <div className="container mx-auto">
                 <div className="md:flex justify-between items-center ">
                     <div className="flex items-center gap-4">
@@ -32,8 +34,14 @@ const Navbar = () => {
                         <NavLink to={"users"}>Users</NavLink>
                     </ul>
                 </div>
+                
             </div>
-        </nav>
+          </nav>
+          <Outlet></Outlet>
+          <Footer></Footer>
+         
+       </div>
+        
     );
 };
 

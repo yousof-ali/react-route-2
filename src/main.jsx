@@ -6,11 +6,25 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Navbar from './component/navbar/Navbar';
+import Posts from './component/posts/Posts';
+
+
+
+
 
 const router = createBrowserRouter([
   {
     path:"/",
-    element:<Navbar></Navbar>
+    element:<Navbar></Navbar>,
+    children:[
+      {
+        path:'posts',
+        loader:()=>fetch("https://jsonplaceholder.typicode.com/posts"),
+        element:<Posts></Posts>
+
+      }
+      
+    ]
   }
 ])
 
