@@ -9,6 +9,7 @@ import Navbar from './component/navbar/Navbar';
 import Posts from './component/posts/Posts';
 import Albums from './component/albums/Albums';
 import Todos from './component/todos/Todos';
+import Users from './component/users/Users';
 
 
 
@@ -34,6 +35,11 @@ const router = createBrowserRouter([
         path:'todos',
         loader:()=>fetch("https://jsonplaceholder.typicode.com/todos"),
         element:<Todos></Todos>
+      },
+      {
+        path:'users',
+        loader:()=>fetch("https://jsonplaceholder.typicode.com/users"),
+        element:<Users></Users>
       }
       
     ]
