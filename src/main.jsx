@@ -8,6 +8,7 @@ import {
 import Navbar from './component/navbar/Navbar';
 import Posts from './component/posts/Posts';
 import Albums from './component/albums/Albums';
+import Todos from './component/todos/Todos';
 
 
 
@@ -28,6 +29,11 @@ const router = createBrowserRouter([
         path:'albums',
         loader:()=>fetch("https://jsonplaceholder.typicode.com/albums"),
         element:<Albums></Albums>
+      },
+      {
+        path:'todos',
+        loader:()=>fetch("https://jsonplaceholder.typicode.com/todos"),
+        element:<Todos></Todos>
       }
       
     ]
