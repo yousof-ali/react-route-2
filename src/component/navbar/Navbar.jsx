@@ -1,4 +1,4 @@
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet, useNavigation } from "react-router-dom";
 import "./Navbar.css"
 import { IoMdMenu } from "react-icons/io";
 import { useState } from "react";
@@ -6,6 +6,7 @@ import { RxCross2 } from "react-icons/rx";
 import Footer from "../footer/Footer";
 
 const Navbar = () => {
+    const loder = useNavigation()
 
     const [click,setClick]=useState(false);
     const setClk = ()=>{
@@ -37,7 +38,10 @@ const Navbar = () => {
                 
             </div>
           </nav>
-          <Outlet></Outlet>
+          {
+            loder.state === "loading"?<p className="text-center"><span className="loading loading-spinner loading-lg"></span></p> : <Outlet></Outlet>
+          }
+          
           <Footer></Footer>
          
        </div>
