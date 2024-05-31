@@ -11,6 +11,7 @@ import Albums from './component/albums/Albums';
 import Todos from './component/todos/Todos';
 import Users from './component/users/Users';
 import AlbumDetail from './component/albumDetail/AlbumDetail';
+import PostBetail from './component/postDetail/PostBetail';
 
 
 
@@ -46,6 +47,11 @@ const router = createBrowserRouter([
         path:'album/:id',
         loader:({params})=>fetch(`https://jsonplaceholder.typicode.com/albums/${params.id}`),
         element:<AlbumDetail></AlbumDetail>
+      },
+      {
+        path:'post/:id',
+        loader:({params})=>fetch(`https://jsonplaceholder.typicode.com/posts/${params.id}`),
+        element:<PostBetail></PostBetail>
       }
       
     ]
