@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import Navbar from './component/navbar/Navbar';
 import Posts from './component/posts/Posts';
+import Albums from './component/albums/Albums';
 
 
 
@@ -22,6 +23,11 @@ const router = createBrowserRouter([
         loader:()=>fetch("https://jsonplaceholder.typicode.com/posts"),
         element:<Posts></Posts>
 
+      },
+      {
+        path:'albums',
+        loader:()=>fetch("https://jsonplaceholder.typicode.com/albums"),
+        element:<Albums></Albums>
       }
       
     ]
