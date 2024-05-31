@@ -14,6 +14,7 @@ import AlbumDetail from './component/albumDetail/AlbumDetail';
 import PostBetail from './component/postDetail/PostBetail';
 import TodoDetails from './component/todoDetails/TodoDetails';
 import UserDetails from './component/userDetails/UserDetails';
+import Error from './component/error/Error';
 
 
 
@@ -23,6 +24,7 @@ const router = createBrowserRouter([
   {
     path:"/",
     element:<Navbar></Navbar>,
+    errorElement:<Error></Error>,
     children:[
       {
         path:'posts',
